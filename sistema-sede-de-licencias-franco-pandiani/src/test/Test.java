@@ -19,6 +19,8 @@ public class Test {
 	private static final String INICIO = "**** INICIALIZANDO ELEMENTOS ****";
 	private static final String SEPARADOR = "---------------------------------";
 	private static final String FIN = "PROGRAMA FINALIZADO.";
+	
+	
 	public static void main(String[] args) {
 
 		imprimir(SEPARADOR);

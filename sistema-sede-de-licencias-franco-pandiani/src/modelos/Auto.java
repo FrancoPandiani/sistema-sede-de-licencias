@@ -2,7 +2,7 @@ package modelos;
 
 public class Auto extends Vehiculo {
 
-	private static final int ZERO = 0;
+	private static final int CERO = 0;
 	private static final int SEIS = 6;
 
 	private int cantPuertas;
@@ -19,7 +19,7 @@ public class Auto extends Vehiculo {
 
 	private void setCantPuertas(int cantPuertas) {
 
-		if (cantPuertas < ZERO || cantPuertas > SEIS) {
+		if (cantPuertas < CERO || cantPuertas > SEIS) {
 			throw new IllegalArgumentException();
 		}
 		this.cantPuertas = cantPuertas;
@@ -28,7 +28,7 @@ public class Auto extends Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Auto Marca: "+ this.marcaAuto +" / Color:"+super.getColor()+" / Patente:"+super.getPatente()+ " / Cantidad de puertas: "+this.cantPuertas;
+		return this.getClass().getSimpleName()+" Marca: "+ this.marcaAuto +" / Color:"+super.getColor()+" / Patente:"+super.getPatente()+ " / Cantidad de puertas: "+this.cantPuertas;
 	}
 	
 }
