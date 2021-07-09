@@ -1,0 +1,8 @@
+Sistema simple de estadísticas de exámenes tomados.
+
+Para aprobar el circuito es necesario:
+Tener 2 faltas o menos para cualquier vehículo.
+
+Para los exámenes:
+En el caso de los autos, que se haya completado su circuito en menos de un minuto y medio y este aprobado.
+En el caso de la moto la cilindrada debe ser mayor a 120 y tener todos sus circuitos aprobados.
