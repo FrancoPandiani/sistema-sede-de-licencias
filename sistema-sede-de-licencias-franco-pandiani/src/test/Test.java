@@ -35,25 +35,19 @@ public class Test {
 			Moto moto1 = new Moto("Roja", "ASD711", 125, MarcaMotoEnum.YAMAHA);
 
 			imprimirEntidad(sede1);
-			imprimir(SEPARADOR);
 			personas = inicializarPersonas();
 			imprimirEntidades(personas);
-			imprimir(SEPARADOR);
 			imprimirEntidad(moto1);
-			imprimir(SEPARADOR);
 			autos = inicializarAutos();
 			imprimirEntidades(autos);
-			imprimir(SEPARADOR);
 			circuitos = inicializarCircuitos();
 			imprimirEntidades(circuitos);
-			imprimir(SEPARADOR);
 			inicializarExamenes(sede1, personas, autos, circuitos, moto1);
 			sede1.ImprimirExamenes();
 			imprimir(SEPARADOR);
 			imprimir(PROCESANDO);
 			imprimir(SEPARADOR);
 			sede1.obtenerInforme();
-			imprimir(SEPARADOR);
 
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
