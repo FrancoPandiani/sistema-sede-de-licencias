@@ -18,9 +18,8 @@ public class Test {
 	private static final String OK = " - OK";
 	private static final String INICIO = "**** INICIALIZANDO ELEMENTOS ****";
 	private static final String SEPARADOR = "---------------------------------";
-	private static final String FIN = "PROGRAMA FINALIZADO.";
-	
-	
+	private static final String FIN_PROGRAMA = "PROGRAMA FINALIZADO.";
+
 	public static void main(String[] args) {
 
 		imprimir(SEPARADOR);
@@ -33,47 +32,35 @@ public class Test {
 			Auto[] autos = new Auto[DOS];
 			Circuito[] circuitos = new Circuito[TRES];
 			Moto moto1 = new Moto("Roja", "ASD711", 125, MarcaMotoEnum.YAMAHA);
-
-			imprimirEntidad(sede1);
+			
 			personas = inicializarPersonas();
+			autos = inicializarAutos();
+			circuitos = inicializarCircuitos();
+			inicializarExamenes(sede1, personas, autos, circuitos, moto1);		
+			
+			imprimirEntidad(sede1);
 			imprimirEntidades(personas);
 			imprimirEntidad(moto1);
-			autos = inicializarAutos();
 			imprimirEntidades(autos);
-			circuitos = inicializarCircuitos();
-			imprimirEntidades(circuitos);
-			inicializarExamenes(sede1, personas, autos, circuitos, moto1);
+			imprimirEntidades(circuitos);		
 			sede1.ImprimirExamenes();
+			
 			imprimir(SEPARADOR);
 			imprimir(PROCESANDO);
 			imprimir(SEPARADOR);
+			
 			sede1.obtenerInforme();
 
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}
-		imprimir(FIN);
+
+		imprimir(FIN_PROGRAMA);
+		
 	}
 
-	private static void imprimir(String cadena) {
-		System.out.println(cadena);
-
-	}
-
-	private static void imprimirEntidad(Object objeto) {
-
-		System.out.println(objeto + OK);
-
-	}
-
-	private static void imprimirEntidades(Object[] objetos) {
-
-		for (Object o : objetos) {
-			System.out.println(o + OK);
-		}
-
-	}
-
+	
+	
 	private static Circuito[] inicializarCircuitos() {
 
 		Circuito c1 = new Circuito(45, 1, 1);
@@ -113,4 +100,24 @@ public class Test {
 		sede.agregarExamen(new ExamenDeMoto(personas[1], 2, moto1, circuitos));
 		sede.agregarExamen(new ExamenDeAuto(personas[2], 3, circuitos[1], autos[1]));
 	}
+
+	private static void imprimir(String cadena) {
+		System.out.println(cadena);
+
+	}
+
+	private static void imprimirEntidad(Object objeto) {
+
+		System.out.println(objeto + OK);
+
+	}
+
+	private static void imprimirEntidades(Object[] objetos) {
+
+		for (Object o : objetos) {
+			System.out.println(o + OK);
+		}
+
+	}
+
 }
